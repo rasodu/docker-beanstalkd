@@ -21,6 +21,9 @@ RUN apk --update add --virtual build-dependencies \
   && rm -rf /tmp/* \
   && rm -rf /var/cache/apk/*
 
+## Directory to store binary log
+RUN mkdir -m 777 -p /var/lib/beanstalkd
+
 ## Expose the port
 EXPOSE 11300
 

@@ -20,3 +20,8 @@ The above example exposes the Beanstalk on port 11300, so that you can use it in
 
 You can also use docker's `links` to link beanstalkd service to your container.
 
+Optionally you can start the container with binary log using following command:
+
+```bash
+sudo docker run -d -p 11300:11300 -v /my/own/datadir:/var/lib/mysql kusmierz/beanstalkd beanstalkd -p 11300 -u nobody -b /var/lib/beanstalkd
+```
